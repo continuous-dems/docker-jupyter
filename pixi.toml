@@ -16,7 +16,10 @@ globato = "==0.2.12"
 
 
 [dependencies]
-python = ">=3.12"
+# IMPORTANT: Currently locking to 3.13 because globato isn't on Conda Forge yet.
+#            Since we get it from PyPI, we have to use its dependencies from PyPI too.
+#            Fiona doesn't build wheels for Python 3.14.
+python = "3.13.*"
 
 # Jupyter
 jupyterhub-singleuser = "*"
