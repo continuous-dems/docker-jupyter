@@ -1,0 +1,55 @@
+[workspace]
+authors = ["Matt Fisher <mfisher87@gmail.com>"]
+channels = ["conda-forge", "nodefaults"]
+name = "cudem-docker-image"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.12"
+
+# Jupyter
+jupyterhub-singleuser = "*"
+jupyterlab = ">=4.4.2"
+jupyterlab-favorites = "*"
+jupyterlab-geojson = "*"
+jupyterlab-git = "*"
+jupyterlab-myst = "*"
+mystmd = "*"
+nbdime = "*"
+
+# Util
+gh = "*"
+gh-scoped-creds = "*"
+git = "*"
+
+# Data
+gdal = "*"
+geopandas = "*"
+geos = "*"
+h5netcdf = "*"
+h5py = "*"
+numpy = "*"
+pandas = "*"
+pystac-client = "*"
+rasterio = "*"
+rioxarray = "*"
+scipy = "*"
+shapely = "*"
+xarray = "*"
+
+# Viz
+folium = "*"
+hvplot = "*"
+ipympl = "*"
+leafmap = "*"
+matplotlib = "*"
+
+# Other
+jupytergis = ">=0.15.0"
+pre-commit = "*"
+ruff = "*"
+typst = "*"
+urllib3 = "~=1.26.19"
