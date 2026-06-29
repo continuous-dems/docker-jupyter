@@ -7,6 +7,14 @@ version = "0.1.0"
 
 [tasks]
 
+[pypi-dependencies]
+# Continuous DEMs
+# NOTE: pinned to exact version so we control it manually
+# IMPORTANT: Currently getting it from PyPI because it's not on Conda Forge yet
+#            (https://github.com/continuous-dems/globato/issues/114)
+globato = "0.2.12"
+
+
 [dependencies]
 python = ">=3.12"
 
