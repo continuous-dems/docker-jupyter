@@ -1,5 +1,10 @@
 # Continuous DEMs Jupyter Docker image
 
+> [!NOTE]
+> This docker image is for getting us started.
+> Perhaps we should actually add continuous DEMs software to the official
+> StratusGeo/CryoCloud image?
+
 ## Usage
 
 Use the image:
