@@ -7,19 +7,15 @@ version = "0.1.0"
 
 [tasks]
 
-[pypi-dependencies]
-# Continuous DEMs
-# NOTE: pinned to exact version so we control it manually
-# IMPORTANT: Currently getting it from PyPI because it's not on Conda Forge yet
-#            (https://github.com/continuous-dems/globato/issues/114)
-globato = "==0.2.12"
-
-
 [dependencies]
 # IMPORTANT: Currently locking to 3.13 because globato isn't on Conda Forge yet.
 #            Since we get it from PyPI, we have to use its dependencies from PyPI too.
 #            Fiona doesn't build wheels for Python 3.14.
 python = "3.13.*"
+
+# Continuous DEMs!
+# NOTE: pinned to exact version so we control it manually
+globato = "==0.2.12"
 
 # Jupyter
 jupyterhub-singleuser = "*"
