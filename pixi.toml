@@ -16,6 +16,7 @@ python = "3.13.*"
 # Continuous DEMs!
 # NOTE: pinned to exact version so we control it manually
 globato = "==0.2.12"
+ivert = "==0.6.1"
 
 # Jupyter
 jupyterhub-singleuser = "*"
