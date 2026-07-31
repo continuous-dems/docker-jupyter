@@ -1,6 +1,10 @@
 FROM ghcr.io/prefix-dev/pixi:noble AS build
 LABEL "org.opencontainers.image.description"="A pixi-based Docker image for a robust cudem environment"
 
+##########################
+######## Setup OS ########
+##########################
+
 # Use bash as default shell instead of sh
 ENV SHELL=/bin/bash
 # Don't buffer Python stdout/stderr output
@@ -30,8 +34,28 @@ ENV DOCKER_WORKDIR=/workdir
 WORKDIR ${DOCKER_WORKDIR}
 RUN chown ${NB_UID}:${NB_UID} ${DOCKER_WORKDIR}
 
-# Build the environment
+####################################
+######## Setup dependencies ########
+####################################
+
+# System tools
+RUN apt update && apt install -y curl gfortran make
+
 USER ${NB_USER}
+
+# Build and install HTDP
+ENV HTDP_VERSION="v.3.6.0"
+RUN mkdir ${DOCKER_WORKDIR}/htdp
+WORKDIR ${DOCKER_WORKDIR}/htdp
+RUN curl -L -O "https://github.com/noaa-ngs/HTDP/archive/refs/tags/${HTDP_VERSION}.tar.gz"
+RUN tar -xvzf ${HTDP_VERSION}.tar.gz
+RUN cd HTDP-${HTDP_VERSION} && make all FC=gfortran
+USER root
+RUN install HTDP-${HTDP_VERSION}/htdp /usr/bin
+USER ${NB_USER}
+WORKDIR ${DOCKER_WORKDIR}
+
+# Build the Pixi environment
 # TODO: Use pixi.lock instead of pixi.toml!?
 COPY pixi.toml .
 RUN pixi install \
