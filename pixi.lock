@@ -346,7 +346,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/gh-scoped-creds-4.1-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/gitdb-4.0.12-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/gitpython-3.1.50-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/globato-0.3.2-pyhc364b38_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/globato-0.3.4-pyhc364b38_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/h11-0.16.0-pyhcf101f3_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/h2-4.3.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/h5netcdf-1.8.1-pyhd8ed1ab_0.conda
@@ -5382,9 +5382,9 @@ packages:
   - pkg:pypi/gitpython?source=hash-mapping
   size: 162193
   timestamp: 1778065820061
-- conda: https://conda.anaconda.org/conda-forge/noarch/globato-0.3.2-pyhc364b38_0.conda
-  sha256: 0869eabb1088d16cb9e1fb2c0976bcf4e2ab6727b8ffa190c9b1c14a0d2c2942
-  md5: 7dff1782afcc9306af737849a581ee92
+- conda: https://conda.anaconda.org/conda-forge/noarch/globato-0.3.4-pyhc364b38_0.conda
+  sha256: d56567391488e2e997955c928405be35923c3d04b0f237395950f9ef414bda97
+  md5: c46d61c0d7cc8e33da05af84b9aab79a
   depends:
   - python >=3.12
   - fetchez >=0.6.4
@@ -5411,10 +5411,9 @@ packages:
   - pygmt
   - python
   license: MIT
-  license_family: MIT
   run_exports: {}
-  size: 175462
-  timestamp: 1786415286132
+  size: 176773
+  timestamp: 1786457328304
 - conda: https://conda.anaconda.org/conda-forge/noarch/h11-0.16.0-pyhcf101f3_1.conda
   sha256: 96cac6573fd35ae151f4d6979bab6fbc90cb6b1fb99054ba19eb075da9822fcb
   md5: b8993c19b0c32a2f7b66cbb58ca27069
