@@ -42,7 +42,7 @@ RUN chown ${NB_UID}:${NB_UID} ${DOCKER_WORKDIR}
 ####################################
 
 # System tools
-RUN apt update && apt install -y curl gfortran make
+RUN apt update && apt install -y curl gfortran make unzip
 
 USER ${NB_USER}
 
