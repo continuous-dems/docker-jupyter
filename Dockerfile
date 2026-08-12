@@ -1,6 +1,9 @@
 FROM ghcr.io/prefix-dev/pixi:noble AS build
 LABEL "org.opencontainers.image.description"="A pixi-based Docker image for a robust cudem environment"
 
+ARG BUILT_FROM_COMMIT
+ENV BUILT_FROM_COMMIT=${BUILT_FROM_COMMIT}
+
 ##########################
 ######## Setup OS ########
 ##########################
