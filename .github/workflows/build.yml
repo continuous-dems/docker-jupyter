@@ -31,7 +31,7 @@ jobs:
           persist-credentials: false
 
       - name: "Build"
-        run: "docker build . -t ${IMAGE_NAME}:${IMAGE_TAG}"
+        run: "docker build --build-arg BUILT_FROM_COMMIT=${GITHUB_SHA} . -t ${IMAGE_NAME}:${IMAGE_TAG}"
 
       - name: "GHCR login"
         if: "github.event_name != 'pull_request'"
