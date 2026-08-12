@@ -15,10 +15,10 @@ python = "3.13.*"
 
 # Continuous DEMs!
 # NOTE: pinned to exact version so we control it manually
-globato = "==0.3.4"
-ivert = "==0.6.7"
-fetchez = "==0.8.2"
-transformez = "==0.5.5"
+globato = "==0.3.6"
+ivert = "==0.6.8"
+fetchez = "==0.8.4"
+transformez = "==0.5.7"
 
 # Jupyter
 jupyterhub-singleuser = "*"
@@ -31,6 +31,9 @@ mystmd = "*"
 nbdime = "*"
 
 # Util
+# NOTE: Conda Forge ships both v1 (1.x) and v2 (2.x) under this name; pin to >=2
+#       so we get the AWS CLI v2 `aws` command.
+awscli = ">=2"
 gh = "*"
 gh-scoped-creds = "*"
 git = "*"

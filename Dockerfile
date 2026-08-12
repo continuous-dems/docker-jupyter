@@ -42,7 +42,9 @@ RUN chown ${NB_UID}:${NB_UID} ${DOCKER_WORKDIR}
 ####################################
 
 # System tools
-RUN apt update && apt install -y curl gfortran make unzip
+# NOTE: groff and less are needed by the AWS CLI v2 -- without groff, `aws help`
+#       errors out, and less is its default pager for long output.
+RUN apt update && apt install -y curl gfortran groff less make unzip
 
 USER ${NB_USER}
 
@@ -72,6 +74,12 @@ RUN echo "#!/bin/bash" > ${ENTRYPOINT_SCRIPT}
 RUN cat ${PWD}/shell-hook >> ${ENTRYPOINT_SCRIPT}
 RUN echo 'exec "$@"' >> ${ENTRYPOINT_SCRIPT}
 RUN chmod +x ${ENTRYPOINT_SCRIPT}
+
+# Expose the AWS CLI outside the Pixi environment
+# NOTE: The `aws` launcher hardcodes an absolute path to its interpreter, so this
+#       symlink works even for shells that skip the entrypoint's env activation
+#       (e.g. `docker exec`), the same way HTDP is installed to /usr/bin above.
+RUN ln -s ${DOCKER_WORKDIR}/.pixi/envs/default/bin/aws /usr/local/bin/aws
 
 USER ${NB_USER}
 WORKDIR "/home/${NB_USER}"
